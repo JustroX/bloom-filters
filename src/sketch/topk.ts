@@ -232,7 +232,8 @@ export default class TopK extends BaseFilter {
       res.push({
         value: elt.value,
         frequency: elt.frequency,
-        rank: this._heap.length - i
+        rank: this._heap.length - i,
+        metadata: elt.metadata,
       })
     }
     return res
