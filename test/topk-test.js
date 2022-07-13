@@ -183,7 +183,7 @@ describe('TopK', () => {
       let i = 0
       let prev = {frequency: Infinity}
       for (const current of topk.iterator()) {
-        current.should.have.all.keys('value', 'rank', 'frequency')
+        current.should.have.all.keys('value', 'rank', 'frequency','metadata')
         current.value.should.equal(expectedTop[i])
         current.frequency.should.be.below(prev.frequency)
         current.rank.should.equal(i + 1)
@@ -203,7 +203,7 @@ describe('TopK', () => {
       let i = 0
       let prev = {frequency: Infinity}
       for (const current of topk.iterator()) {
-        current.should.have.all.keys('value', 'rank', 'frequency')
+        current.should.have.all.keys('value', 'rank', 'frequency','metadata')
         current.value.should.equal(expectedTop[i])
         current.frequency.should.be.below(prev.frequency)
         current.rank.should.equal(i + 1)
@@ -223,7 +223,7 @@ describe('TopK', () => {
       let i = 0
       let prev = {frequency: Infinity}
       for (const current of topk.iterator()) {
-        current.should.have.all.keys('value', 'rank', 'frequency')
+        current.should.have.all.keys('value', 'rank', 'frequency','metadata')
         current.value.should.equal(expectedTop[i])
         current.frequency.should.be.below(prev.frequency)
         current.rank.should.equal(i + 1)

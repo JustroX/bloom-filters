@@ -13,7 +13,8 @@
     "slint": "eslint --fix src/**/*.ts",
     "prettier": "prettier --config package.json --write \"(src|test)/**/*.(t|j)s\"",
     "clean": "rimraf docs/ dist/ build/",
-    "compile": "tsc"
+    "compile": "tsc",
+    "prepare": "tsc"
   },
   "repository": {
     "type": "git",
