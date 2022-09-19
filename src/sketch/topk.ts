@@ -199,7 +199,7 @@ export default class TopK extends BaseFilter {
    * Add an element to the TopK
    * @param element - Element to add
    */
-  public add (element: string, count = 1, metadata?: ElementMetadata): void {
+   public add (element: string, count = 1, metadata?: ElementMetadata): void {
     if (0 >= count) {
       throw `count must be > 0 (was ${count})`
     }
@@ -226,6 +226,15 @@ export default class TopK extends BaseFilter {
         this._heap.popMin()
       }
     }
+  }
+
+  /**
+   * Get the frequency of an element
+   * @param element - Element
+   */
+   public count (element: string): number {
+    const frequency = this._sketch.count(element);
+    return frequency;
   }
 
   /**
